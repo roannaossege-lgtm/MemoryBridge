@@ -5,7 +5,6 @@ import {
   ScrollView,
   StyleSheet,
   SafeAreaView,
-  Alert,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -64,33 +63,19 @@ const HomeScreen: React.FC = () => {
   }, [appData]);
 
   const handleCall = () => {
-    Alert.alert(
-      'Call Someone',
-      'Tap a contact to call them (coming soon)',
-      [
-        { text: 'OK' },
-      ]
-    );
+    navigation.navigate('Call');
   };
 
   const handleSchedule = () => {
-    Alert.alert(
-      'My Schedule',
-      'Daily schedule view (coming soon)',
-      [{ text: 'OK' }]
-    );
+    navigation.navigate('Schedule');
   };
 
   const handleMedications = () => {
-    Alert.alert(
-      'Medications',
-      'Medication reminders (coming soon)',
-      [{ text: 'OK' }]
-    );
+    navigation.navigate('Medications');
   };
 
   const handleSettings = () => {
-    navigation.navigate('Settings' as never);
+    navigation.navigate('Settings');
   };
 
   if (!appData) {
